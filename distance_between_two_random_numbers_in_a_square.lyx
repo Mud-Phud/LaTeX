@@ -1,0 +1,373 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Problem*
+What is the average distance of two random points, one on the line segment
+ 
+\begin_inset Formula $(x,0)$
+\end_inset
+
+ with 
+\begin_inset Formula $0\le x\le1$
+\end_inset
+
+ and the other on the line segment 
+\begin_inset Formula $(x,1)$
+\end_inset
+
+ with 
+\begin_inset Formula $0\le x\le1$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+The solution is give as follows: We let 
+\begin_inset Formula $(x_{1},0)$
+\end_inset
+
+, 
+\begin_inset Formula $(x_{2},1)$
+\end_inset
+
+ represent the the two points where 
+\begin_inset Formula $0\le x_{1},x_{2}\le1$
+\end_inset
+
+.
+ The average is given by 
+\begin_inset Formula 
+\[
+\overline{d}=\int_{0}^{1}\int_{0}^{1}\sqrt{(x_{1}-x_{2})^{2}+1}\,dx_{1}dx_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We implement the following change of variables:
+\begin_inset Formula 
+\begin{align*}
+x_{1}-x_{2} & =t_{1}\\
+x_{1}+x_{2} & =t_{2}-1
+\end{align*}
+
+\end_inset
+
+so 
+\begin_inset Formula 
+\begin{align*}
+x_{1} & =\left(t_{1}+t_{2}-1\right)/2\\
+x_{2} & =\left(t_{2}-t_{1}-1\right)/2
+\end{align*}
+
+\end_inset
+
+Now the square domain 
+\begin_inset Formula $0\le x_{1},x_{2}\le1$
+\end_inset
+
+ is transformed into the 
+\begin_inset Quotes eld
+\end_inset
+
+diamond
+\begin_inset Quotes erd
+\end_inset
+
+ domain call it 
+\begin_inset Formula $D$
+\end_inset
+
+ with vertices 
+\begin_inset Formula 
+\[
+(t_{1},t_{2})=\left\{ (1,0),(0,1),(-1,0),(0,-1)\right\} 
+\]
+
+\end_inset
+
+The integral is then given by
+\begin_inset Formula 
+\begin{align*}
+\overline{d} & =\int_{0}^{1}\int_{0}^{1}\sqrt{(x_{1}-x_{2})^{2}+1}\,dx_{1}dx_{2}\\
+ & =\int\int_{D}\sqrt{(t_{1})^{2}+1}\,\mathcal{J\,}dt_{1}dt_{2}\\
+ & =\frac{1}{\sqrt{2}}\int\int_{D}\sqrt{(t_{1})^{2}+1}\,dt_{1}dt_{2}\\
+ & =\frac{1}{\sqrt{2}}\int_{-1}^{0}\int_{-1-t_{2}}^{1+t_{2}}\sqrt{(t_{1})^{2}+1}\,dt_{1}dt_{2}\\
+ & \qquad+\frac{1}{\sqrt{2}}\int_{0}^{1}\int_{-1+t_{2}}^{1-t_{2}}\sqrt{(t_{1})^{2}+1}\,dt_{1}dt_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ varies from 
+\begin_inset Formula $(0-1)=-1$
+\end_inset
+
+ to 
+\begin_inset Formula $(1-0)=1$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $t_{1}=0,$
+\end_inset
+
+ then 
+\begin_inset Formula $t_{2}=x_{1}=x_{2}$
+\end_inset
+
+ will vary from 0 to 1.
+ If 
+\begin_inset Formula $t_{1}=1$
+\end_inset
+
+, then 
+\begin_inset Formula $x_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $x_{2}=0$
+\end_inset
+
+, and 
+\begin_inset Formula $2t_{2}=x_{1}+x_{2}=1$
+\end_inset
+
+ or 
+\begin_inset Formula $t_{2}=1/2$
+\end_inset
+
+.
+ Similarly, if 
+\begin_inset Formula $t_{1}=-1$
+\end_inset
+
+, then 
+\begin_inset Formula $x_{1}=0$
+\end_inset
+
+, 
+\begin_inset Formula $x_{2}=1$
+\end_inset
+
+, and 
+\begin_inset Formula $2t_{2}=x_{1}+x_{2}=1$
+\end_inset
+
+ or 
+\begin_inset Formula $t_{2}=1/2$
+\end_inset
+
+.
+ Now suppose 
+\begin_inset Formula $x_{1}-x_{2}=t_{1}=t>0$
+\end_inset
+
+, i.e., 
+\begin_inset Formula $x_{1}>x_{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $x_{1}=x_{2}+t$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $0\le x_{2}\le1-t$
+\end_inset
+
+ and 
+\begin_inset Formula $t\le x_{1}=x_{2}+t\le1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+t_{2}=\frac{1}{2}\left(x_{1}+x_{2}\right)=\frac{1}{2}\left(x_{1}-x_{2}+2x_{2}\right)=\frac{1}{2}t+x_{2}.
+\]
+
+\end_inset
+
+or 
+\begin_inset Formula $x_{1}=x_{2}+t$
+\end_inset
+
+ where necessarily 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ ranges from 0 to 
+\begin_inset Formula $1-t$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{1}+x_{2}=2x_{2}+t$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+We will also need the anti-derivative of 
+\begin_inset Formula $\int\sqrt{1+t^{2}}dt$
+\end_inset
+
+.
+ For this we use the hyperbolic substitution, 
+\begin_inset Formula $t=\sinh(u)$
+\end_inset
+
+, 
+\begin_inset Formula $dt=\cosh(u)du$
+\end_inset
+
+ as well as this from the 
+\begin_inset Quotes eld
+\end_inset
+
+double angle formula
+\begin_inset Quotes erd
+\end_inset
+
+ for hyperbolic cosine:
+\begin_inset Formula 
+\begin{align*}
+\cosh^{2}u & =\left(\frac{e^{u}+e^{-u}}{2}\right)^{2}\\
+ & =\frac{e^{2u}+2+e^{-2u}}{4}\\
+ & =\frac{1}{2}\cosh(2u)+\frac{1}{2}
+\end{align*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\int\sqrt{1+t^{2}}dt & =\int\sqrt{1+\sinh^{2}u}\cosh(u)\,du\\
+ & =\int\sqrt{\cosh^{2}u}\cosh(u)\,du\\
+ & =\int\cosh^{2}(u)\,du\\
+ & =\int\left(\frac{1}{2}\cosh(2u)+\frac{1}{2}\right)\,du\\
+ & =\frac{1}{4}\sinh(2u)+\frac{1}{2}u\\
+ & =\frac{1}{4}\frac{e^{2u}-e^{-2u}}{2}+\frac{1}{2}u\\
+ & =\frac{1}{4}2\left(\frac{e^{u}+e^{-u}}{2}\right)\left(\frac{e^{u}-e^{-u}}{2}\right)+\frac{1}{2}u\\
+ & =\frac{1}{2}\cosh(u)\sinh(u)+\frac{1}{2}u
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+What is the average distance of two points in a square?
+\end_layout
+
+\begin_layout Standard
+The solution is give as follows: We let 
+\begin_inset Formula $(x_{1},y_{1})$
+\end_inset
+
+, 
+\begin_inset Formula $(x_{2},y_{2})$
+\end_inset
+
+ represent the the two points where 
+\begin_inset Formula $0\le x_{1},y_{1},x_{2},y_{2}\le1$
+\end_inset
+
+.
+ The average is given by 
+\begin_inset Formula 
+\[
+d=\int_{0}^{1}\int_{0}^{1}\int_{0}^{1}\int_{0}^{1}\sqrt{(x_{1}-x_{2})^{2}+(y_{1}-y_{2})^{2}}\,dx_{1}dx_{2}dy_{1}dy_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
