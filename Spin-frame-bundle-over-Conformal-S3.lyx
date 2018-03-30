@@ -1,0 +1,230 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+We consider the conformal structure on 
+\begin_inset Formula $S^{3}$
+\end_inset
+
+.
+ Here we consider 
+\begin_inset Formula $S^{3}$
+\end_inset
+
+ as the projectivized light cone in 
+\begin_inset Formula $\mathbb{L}^{(4,1)}$
+\end_inset
+
+.
+ We can think of this as the homogeneous space 
+\begin_inset Formula $SO(4,1)/P$
+\end_inset
+
+ where 
+\begin_inset Formula $P$
+\end_inset
+
+ is the stabilizer of a null line.
+ Instead, we will think of it as the quotient of 
+\begin_inset Formula $Spin(4,1)=Sp(1,1)$
+\end_inset
+
+ by the appropriate parabolic group.
+ Here 
+\begin_inset Formula $Sp(1,1)$
+\end_inset
+
+ is the 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ quaternionic matrices that preserve a quaternionic hermitian inner product
+ of signature 
+\begin_inset Formula $(1,1)$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle $
+\end_inset
+
+ is the quaternionic hermitian inner product on 
+\begin_inset Formula $\mathbb{H}^{2}$
+\end_inset
+
+, i.e., 
+\begin_inset Formula $\left\langle u\lambda,v\right\rangle =\bar{\lambda}\left\langle u,v\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\left\langle u,v\lambda\right\rangle =\left\langle u,v\right\rangle \lambda$
+\end_inset
+
+ and there exists a basis 
+\begin_inset Formula $e_{1},e_{2}$
+\end_inset
+
+ such that
+\begin_inset Formula $\left\langle e_{1},e_{1}\right\rangle =-\left\langle e_{2},e_{2}\right\rangle =1$
+\end_inset
+
+and
+\begin_inset Formula $\left\langle e_{1},e_{2}\right\rangle =0.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We actually are more interested in the collection of basis vectors 
+\begin_inset Formula 
+\[
+\mathcal{F}=\left\{ (e_{1},e_{2})\left|\left\langle e_{1},e_{1}\right\rangle =\left\langle e_{2},e_{2}\right\rangle =0,\left\langle e_{1},e_{2}\right\rangle =1\right.\right\} .
+\]
+
+\end_inset
+
+The moving frame analysis considers the components of the basis (or frame)
+ 
+\begin_inset Formula $e_{1},e_{2}$
+\end_inset
+
+ as vector valued functions on 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+, i.e., 
+\begin_inset Formula $e_{1},e_{2}:\mathcal{F}\to\mathbb{H}^{2}$
+\end_inset
+
+ .
+ As such, we may express the exterior derivative as a 1-form valued linear
+ combination of the basis itself
+\begin_inset Formula 
+\begin{equation}
+d(e_{1},e_{2})=(e_{1},e_{2})\left(\begin{array}{cc}
+\alpha & \beta\\
+\omega & \delta
+\end{array}\right).\label{eq:$*$}
+\end{equation}
+
+\end_inset
+
+Taking derivative of the relations among the basis, we obtain the relations:
+\begin_inset Formula 
+\begin{align*}
+0=d(0)=d\left\langle e_{1},e_{1}\right\rangle  & =\left\langle de_{1},e_{1}\right\rangle +\left\langle e_{1},de_{1}\right\rangle \\
+ & =\left\langle e_{1}\alpha+e_{2}\omega,e_{1}\right\rangle +\left\langle e_{1},e_{1}\alpha+e_{2}\omega\right\rangle =\bar{\omega}+\omega
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+0=d(0)=d\left\langle e_{2},e_{2}\right\rangle  & =\left\langle de_{2},e_{2}\right\rangle +\left\langle e_{2},de_{2}\right\rangle \\
+ & =\left\langle e_{1}\beta+e_{2}\delta,e_{2}\right\rangle +\left\langle e_{2},e_{1}\beta+e_{2}\delta\right\rangle =\bar{\beta}+\beta
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+0=d(1)=d\left\langle e_{1},e_{2}\right\rangle  & =\left\langle de_{1},e_{2}\right\rangle +\left\langle e_{1},de_{2}\right\rangle \\
+ & =\left\langle e_{1}\alpha+e_{2}\omega,e_{2}\right\rangle +\left\langle e_{1},e_{1}\beta+e_{2}\delta\right\rangle =\bar{\alpha}+\delta
+\end{align*}
+
+\end_inset
+
+from which we infer that 
+\begin_inset Formula $\omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are pure quaternionic imaginary and 
+\begin_inset Formula $\delta=-\bar{\alpha}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document
