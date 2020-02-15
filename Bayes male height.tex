@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
+\begin{document}
+For background linear algebra, see the article 
+\href{https://datascienceplus.com/understanding-the-covariance-matrix/}{Understanding the Covariance Matrix}
+We consider a vector of standard normally distributed random variables $x=(x_1,\dots,x_n)$. 
+Now for a matrix $A_{ij}$, we let $y_i=A_{ij}x_j$ where we use the summation notation. We then consider the covariance matrix of $y_i$. This is given by 
+$$
+C_{ij}=C(y_i,y_j)=C(A_{ik}x_k,A+{jl}x_l)
+$$
+
+Let us take the average height for an American male as 70 inches with standard deviation 3 inches. We assume a Gaussian distribution,
+$$
+P_{\mu,\sigma}(x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}((x-\mu)/ \sigma)^2}
+$$
+with $\mu=70$ and $\sigma=3$. Also we will write the cumulative distribution function as
+$$
+\Phi_{\mu,\sigma}(x)= \int^x_{-\infty} 
+\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}((x_0-\mu)/ \sigma)^2} \, dx_0.
+$$
+We have $\Phi_{\mu,\sigma}(-\infty)=0$, $\Phi_{\mu,\sigma}(\mu)=1/2$, and $\Phi_{\mu,\sigma}(\infty)=1$. 
+
+Suppose that we have a guy, Al, chosen at random. And suppose that we choose another guy, Bill, at random. We note that Al is taller than Bill. With that in mind, what is the probability distribution of Al?
+
+Recall Bayes Theorem:
+$$
+P(A\vert B)= \frac{P(B\vert A)}{P(B)}P(A)
+$$
+Here we set $A$ be the probability that Al has height between $x_0$ and $x_0+dx$. We let $B$ be the probability that Bill is shorter than Al. 
+
+We compute the various terms. $ P(B\vert A) $ is the probability that a random guy is shorter than a guy whose height is between $x_0$ and $x_0+dx$. Since $dx$ is small, we have
+$$
+P(B\vert A) = \int^{x_0}_{-\infty} P_{\mu,\sigma}(x)=\int^{x_0}_{-\infty}  \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}((x-\mu)/ \sigma)^2} dx
+$$
+or using the notation above,
+$$
+P(B\vert A) = \Phi_{\mu,\sigma}(x_0).
+$$
+
+
+The term $P(A)$ is the probability that Al has height between $x_0$ and $x_0+dx$, or
+$$
+P(A) = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}((x_0-\mu)/ \sigma)^2}\, dx =
+P_{\mu,\sigma}(x_0)
+$$
+
+Lastly, $P(B)$ is the probability that a random guy is shorter than another random guy should be $1/2$ but let's verify this by integrating over all choices of $x_0$.
+
+\begin{align*}
+   P(B) &= \int_{-\infty}^{x_0} P(B\vert A) \\
+        &= \int_{-\infty}^{x_0} \Phi_{\mu,\sigma}(x_0) \, dx_0 \\
+        &= \int_{-\infty}^{\infty} \int^{x_0}_{-\infty} 
+\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2}((y-\mu)/ \sigma)^2} \, dy \, dx_0 \\
+\end{align*}
+
+\end{document}
+
+
+
+

@@ -19,6 +19,9 @@
 # *.eps
 # *.pdf
 
+## Lyx backups
+*.lyx#
+
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
 *.bcf
