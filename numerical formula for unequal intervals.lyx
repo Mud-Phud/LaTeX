@@ -1,0 +1,229 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+We explain the bizarre formula for np.gradient.
+ We have the standard approximation for the estimation of the derivative:
+ 
+\begin_inset Formula 
+\[
+f^{\prime}(x)=\frac{f(x+h)-f(x)}{h}+O(h).
+\]
+
+\end_inset
+
+To derive this, we assume that the function is 
+\begin_inset Formula $C^{2}$
+\end_inset
+
+ and we have the Taylor series expansion:
+\begin_inset Formula 
+\[
+f(x+h)=f(x)+f^{\prime}(x)h+f^{\prime\prime}(\xi)\frac{h^{2}}{2},\qquad\xi\in(x,x+h)
+\]
+
+\end_inset
+
+for some 
+\begin_inset Formula $\xi\in(x,x+h)$
+\end_inset
+
+ and we simply solve for 
+\begin_inset Formula $f^{\prime}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is assumed to be 
+\begin_inset Formula $C^{3}$
+\end_inset
+
+, we have by the intermediate value theorem:
+\begin_inset Formula 
+\[
+f(x+h)=f(x)+f^{\prime}(x)h+f^{\prime\prime}(x)\frac{h^{2}}{2}+f^{\prime\prime\prime}(\xi_{+})\frac{h^{3}}{6}
+\]
+
+\end_inset
+
+for some 
+\begin_inset Formula $\xi_{+}\in(x,x+h)$
+\end_inset
+
+.
+ But we also have 
+\begin_inset Formula 
+\[
+f(x-h)=f(x)-f^{\prime}(x)h+f^{\prime\prime}(x)\frac{h^{2}}{2}-f^{\prime\prime\prime}(\xi_{-})\frac{h^{3}}{6}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+f(x+h) & =f(x)+f^{\prime}(x)h+f^{\prime\prime}(x)\frac{h^{2}}{2}+f^{\prime\prime\prime}(\xi_{+})\frac{h^{3}}{6}\\
+f(x-h) & =f(x)-f^{\prime}(x)h+f^{\prime\prime}(x)\frac{h^{2}}{2}-f^{\prime\prime\prime}(\xi_{-})\frac{h^{3}}{6}
+\end{align*}
+
+\end_inset
+
+for some 
+\begin_inset Formula $\xi_{-}\in(x-h,x)$
+\end_inset
+
+.
+ Subtracting these two equations yields:
+\begin_inset Formula 
+\[
+2f^{\prime}(x)h=f(x+h)-f(x-h)+\left(f^{\prime\prime\prime}(\xi_{+})+f^{\prime\prime\prime}(\xi_{-})\frac{h^{3}}{6}\right)\frac{h^{3}}{6}
+\]
+
+\end_inset
+
+or 
+\begin_inset Formula 
+\[
+f^{\prime}(x)=\frac{f(x+h)-f(x-h)}{2h}+\left(f^{\prime\prime\prime}(\xi_{+})+f^{\prime\prime\prime}(\xi_{-})\right)\frac{h^{2}}{12}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now suppose we don't have equal intervals.
+ We will have the an 
+\begin_inset Formula $h_{+}$
+\end_inset
+
+ and an 
+\begin_inset Formula $h_{-}$
+\end_inset
+
+ and the equations:
+\begin_inset Formula 
+\[
+f(x+h_{+})=f(x)+f^{\prime}(x)h_{+}+f^{\prime\prime}(x)\frac{h_{+}^{2}}{2}+f^{\prime\prime\prime}(\xi_{+})\frac{h_{+}^{3}}{6}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+f(x-h_{-})=f(x)-f^{\prime}(x)h_{-}+f^{\prime\prime}(x)\frac{h_{-}^{2}}{2}-f^{\prime\prime\prime}(\xi_{-})\frac{h_{-}^{3}}{6}.
+\]
+
+\end_inset
+
+Multiply the first of these by 
+\begin_inset Formula $h_{-}^{2}$
+\end_inset
+
+ and the second by 
+\begin_inset Formula $h_{+}^{2}$
+\end_inset
+
+ and subtract (factors chosen to eliminate the second derivative term):
+\begin_inset Formula 
+\[
+f(x+h_{+})h_{-}^{2}+f(x-h_{-})h_{+}^{2}=f(x)\left(h_{-}^{2}-h_{+}^{2}\right)+f^{\prime}(x)\left(h_{+}h_{-}^{2}+h_{-}h_{+}^{2}\right)+f^{\prime\prime\prime}(\xi_{+})\frac{h_{+}^{3}h_{-}^{2}}{6}+f^{\prime\prime\prime}(\xi_{-})\frac{h_{-}^{3}h_{+}^{2}}{6}.
+\]
+
+\end_inset
+
+Solving for 
+\begin_inset Formula $f^{\prime}(x)$
+\end_inset
+
+, we obtain the formula:
+\begin_inset Formula 
+\[
+f^{\prime}(x)\thickapprox\frac{f(x+h_{+})h_{-}^{2}+f(x-h_{-})h_{+}^{2}-f(x)\left(h_{-}^{2}-h_{+}^{2}\right)}{h_{+}h_{-}^{2}+h_{-}h_{+}^{2}}.
+\]
+
+\end_inset
+
+Note that if 
+\end_layout
+
+\end_body
+\end_document

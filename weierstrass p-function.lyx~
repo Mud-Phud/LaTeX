@@ -277,18 +277,6 @@ Differentiating, we find:
 
 \end_inset
 
-Now consider 
-\begin_inset Formula $\wp^{\prime}(z;\tau)^{2}$
-\end_inset
-
-:
-\begin_inset Formula 
-\[
-\wp^{\prime}(z;\tau)^{2}=\left(\sum_{-\infty<m,n<\infty}\left\{ \frac{2}{(z+m+n\tau)^{3}}\right\} \right)\left(\sum_{-\infty<m,n<\infty}\left\{ \frac{2}{(z+m+n\tau)^{3}}\right\} \right)
-\]
-
-\end_inset
-
 
 \end_layout
 
