@@ -1,0 +1,325 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Li's criterion
+\end_layout
+
+\begin_layout Standard
+For the Riemann 
+\begin_inset Formula $\xi(s)$
+\end_inset
+
+ function, i.e.,
+\begin_inset Formula 
+\[
+\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\Gamma\left(\frac{s}{2}\right)\zeta(s)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda_{n}$
+\end_inset
+
+is defined to be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{n}=\frac{1}{(n-1)!}\left.\frac{d^{n}}{ds^{n}}\left[s^{n-1}\log\xi(s)\right]\right|_{s=1}
+\]
+
+\end_inset
+
+then the Riemann hypothesis is equivelant to 
+\begin_inset Formula $>\lambda_{n}>0$
+\end_inset
+
+ for all positive integers 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Alternative definition of Riemann zeta function:
+\begin_inset Newline linebreak
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\zeta(s)=\frac{1}{1-2^{1-s}}\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^{s}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is defined for 
+\begin_inset Formula $\Re(s)>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula 
+\[
+\alpha(s)=\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\]
+
+\end_inset
+
+We have the relation
+\begin_inset Formula 
+\[
+\zeta(s)\Gamma(s)=\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx.
+\]
+
+\end_inset
+
+We can then use this in the above and have
+\begin_inset Formula 
+\[
+\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\frac{\Gamma\left(\frac{s}{2}\right)}{\Gamma(s)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Taylor expansion of 
+\begin_inset Formula $x^{s}=e^{s\ln x}$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\begin{align*}
+x^{s} & =e^{s\ln x}\\
+ & =f(1)+\frac{1}{1!}f^{\prime}(1)(s-1)+\frac{1}{2!}f^{\prime\prime}(1)(s-1)^{2}+\frac{1}{3!}f^{\prime\prime\prime}(1)(s-1)^{3}+\cdots\\
+ & =e^{\ln x}+\frac{1}{1!}\ln(x)e^{\ln x}(s-1)+\frac{1}{2!}\ln(x)^{2}e^{\ln x}(s-1)^{2}+\frac{1}{3!}\ln(x)^{3}e^{\ln x}(s-1)^{3}+\cdots\\
+ & =x^{s}+\frac{1}{1!}\ln(x)x^{s}(s-1)+\frac{1}{2!}\ln(x)^{2}x^{s}(s-1)^{2}+\frac{1}{3!}\ln(x)^{3}x^{s}(s-1)^{3}+\cdots
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's look at the denominator:
+\begin_inset Formula 
+\begin{align*}
+\int\limits _{0}^{\infty}\frac{x^{s-1}}{\left(e^{x}-1\right)}dx & =\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}\left(1-e^{-x}\right)}dx\\
+ & =\int\limits _{0}^{\infty}x^{s-1}e^{-x}(1+e^{-x}+e^{-2x}+\cdots)dx\\
+ & =\int\limits _{0}^{\infty}x^{s-1}(e^{-x}+e^{-2x}+e^{-3x}+\cdots)dx\\
+ & =\int\limits _{0}^{\infty}x^{s-1}e^{-x}dx+\int\limits _{0}^{\infty}x^{s-1}e^{-2x}dx+\int\limits _{0}^{\infty}x^{s-1}e^{-3x}dx+\cdots\\
+ & \int\limits _{0}^{\infty}x^{s-1}e^{-x}dx\\
+ & \qquad+\frac{1}{2^{s}}\int\limits _{0}^{\infty}x^{s-1}e^{-x}dx\\
+ & \qquad+\frac{1}{3^{s}}\int\limits _{0}^{\infty}x^{s-1}e^{-x}dx+\cdots\\
+ & =\Gamma(s)\zeta(s)\\
+ & =\lim_{m\rightarrow\infty}\int\limits _{0}^{m}\frac{x^{s-1}e^{-x}}{\left(1-(1-\frac{x}{m})^{m}\right)}dx\\
+ & =\lim_{m\rightarrow\infty}\int\limits _{0}^{m}\frac{x^{s-1}}{}\left[1+(1+\frac{x}{m})^{m}\right]dx
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+f(x)=e^{x}-1 & =x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots
+\end{align*}
+
+\end_inset
+
+This satisfies the equation, 
+\begin_inset Formula $\frac{df}{dx}-1=f(x)$
+\end_inset
+
+ or 
+\begin_inset Formula $\frac{df}{dx}=f(x)+1$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $f(x)=-1$
+\end_inset
+
+ is a solution.
+ Hence the general solution is 
+\begin_inset Formula $f(x)=Ce^{x}-1$
+\end_inset
+
+.
+ The Runge Kutta solution is had by approximation.
+ Initial condition is 
+\begin_inset Formula $f(0)=0$
+\end_inset
+
+.
+ Divide the unit interval into 
+\begin_inset Formula $n$
+\end_inset
+
+-intervals.
+ Then 
+\begin_inset Formula 
+\begin{gather*}
+f(1/n)\approx1+f(0)(1/n)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Riemann 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ function (product formulation).
+ Let 
+\begin_inset Formula $p_{i}=\{2,3,5,\ldots\}$
+\end_inset
+
+be the distinct primes in order, then
+\begin_inset Formula 
+\[
+\zeta(s)=\prod\left(1-p_{i}^{-s}\right)^{-1}
+\]
+
+\end_inset
+
+So
+\begin_inset Formula 
+\begin{align*}
+\ln\zeta(s) & =-\sum\ln\left(1-p_{i}^{-s}\right)\\
+ & =-\sum\ln\left(1-\frac{1}{p_{i}^{s}}\right)\\
+ & =-\sum\ln\left(\frac{p_{i}^{s}}{p_{i}^{s}}-\frac{1}{p_{i}^{s}}\right)\\
+ & =-\sum\ln\left(\frac{p_{i}^{s}-1}{p_{i}^{s}}\right)\\
+ & =\sum\ln\left(\frac{p_{i}^{s}}{p_{i}^{s}-1}\right)\\
+ & =\sum\ln p_{i}^{s}-\ln(p_{i}^{s}-1)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose we have 
+\begin_inset Formula $y=\ln f(x)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $e^{y}=f(x).$
+\end_inset
+
+ Differentiating, 
+\begin_inset Formula 
+\begin{gather*}
+e^{y}y^{\prime}=f^{\prime}(x)\\
+e^{y}\left(y^{\prime}\right)^{2}+=f^{\prime}(x)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
