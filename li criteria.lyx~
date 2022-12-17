@@ -82,7 +82,7 @@ figs-within-sections
 
 \begin_body
 
-\begin_layout Part*
+\begin_layout Section
 Li's criterion
 \end_layout
 
@@ -93,17 +93,17 @@ For the Riemann
 
  function, i.e.,
 \begin_inset Formula 
-\[
+\begin{equation}
 \xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\Gamma\left(\frac{s}{2}\right)\zeta(s)
-\]
+\end{equation}
 
 \end_inset
 
-where 
+we 
 \begin_inset Formula $\lambda_{n}$
 \end_inset
 
-is defined to be:
+is define to be:
 \end_layout
 
 \begin_layout Standard
@@ -115,7 +115,7 @@ is defined to be:
 \end_inset
 
 then the Riemann hypothesis is equivelant to 
-\begin_inset Formula $>\lambda_{n}>0$
+\begin_inset Formula $\lambda_{n}>0$
 \end_inset
 
  for all positive integers 
@@ -143,6 +143,15 @@ Alternative definition of Riemann zeta function:
 \end_layout
 
 \begin_layout Standard
+This is defined for 
+\begin_inset Formula $\Re(s)>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
 Consider 
 \begin_inset Formula 
 \[
@@ -151,7 +160,8 @@ Consider
 
 \end_inset
 
-We have the relation
+We have the well known relation between the zeta function and the Gamma
+ function:
 \begin_inset Formula 
 \[
 \zeta(s)\Gamma(s)=\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx.
@@ -161,9 +171,58 @@ We have the relation
 
 We can then use this in the above and have
 \begin_inset Formula 
+\begin{equation}
+\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\frac{\Gamma\left(\frac{s}{2}\right)}{\Gamma(s)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\label{eq:xi-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lastly we need the Legendre duplication formula.
+ This is given by: 
+\begin_inset Formula 
 \[
-\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\frac{\Gamma\left(\frac{s}{2}\right)}{\Gamma(s)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\Gamma(z)\Gamma\left(z+\tfrac{1}{2}\right)=2^{1-2z}\;\sqrt{\pi}\;\Gamma(2z)
 \]
+
+\end_inset
+
+We modify this by replacing 
+\begin_inset Formula $z$
+\end_inset
+
+ by 
+\begin_inset Formula $s/2$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{\Gamma(\frac{s}{2})}{\;\Gamma(s)}=\frac{2^{1-s}\;\sqrt{\pi}}{\Gamma\left(\tfrac{s+1}{2}\right)}
+\]
+
+\end_inset
+
+ We substitute this into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:xi-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we obtain 
+\begin_inset Formula 
+\begin{align*}
+\xi(s) & =\frac{1}{2}s(s-1)\pi^{-s/2}\frac{2^{1-s}\;\sqrt{\pi}}{\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\\
+ & =\frac{1}{2}s(s-1)\frac{2\;\sqrt{\pi}}{(\sqrt{\pi})^{s}2^{s}\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\\
+ & =\frac{1}{2}s(s-1)\frac{(2\;\sqrt{\pi})^{1-s}}{\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\end{align*}
 
 \end_inset
 

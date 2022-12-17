@@ -82,7 +82,7 @@ figs-within-sections
 
 \begin_body
 
-\begin_layout Part*
+\begin_layout Section
 Li's criterion
 \end_layout
 
@@ -93,17 +93,17 @@ For the Riemann
 
  function, i.e.,
 \begin_inset Formula 
-\[
+\begin{equation}
 \xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\Gamma\left(\frac{s}{2}\right)\zeta(s)
-\]
+\end{equation}
 
 \end_inset
 
-where 
+we 
 \begin_inset Formula $\lambda_{n}$
 \end_inset
 
-is defined to be:
+is define to be:
 \end_layout
 
 \begin_layout Standard
@@ -115,7 +115,7 @@ is defined to be:
 \end_inset
 
 then the Riemann hypothesis is equivelant to 
-\begin_inset Formula $>\lambda_{n}>0$
+\begin_inset Formula $\lambda_{n}>0$
 \end_inset
 
  for all positive integers 
@@ -123,6 +123,73 @@ then the Riemann hypothesis is equivelant to
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Standard
+We know that the zeta function has a simple pole at 
+\begin_inset Formula $s=1$
+\end_inset
+
+, so the xi function will be well defined on the entire real line because
+ of the factor 
+\begin_inset Formula $s-1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose we have a random function 
+\begin_inset Formula $f(s)$
+\end_inset
+
+ with Taylor expansion 
+\begin_inset Formula 
+\[
+f(s)=\sum_{i=0}^{\infty}f_{i}(s-1)^{i}.
+\]
+
+\end_inset
+
+Now the Taylor expansion of 
+\begin_inset Formula $s^{n-1}$
+\end_inset
+
+is given by
+\begin_inset Formula 
+\begin{align*}
+s^{n-1} & =\left(1+(s-1)\right)^{n-1}\\
+ & =1^{n-1}+(n-1)1^{n-2}(s-1)+\binom{n-1}{2}(s-1)^{2}+\cdots\\
+ & \qquad+\binom{n-1}{n-2}(s-1)^{n-2}+\binom{n-1}{n-1}(s-1)^{n-1}\\
+ & =\sum_{j=0}^{n-1}\binom{n-1}{j}(s-1)^{j}
+\end{align*}
+
+\end_inset
+
+If we are trying to compute
+\begin_inset Formula 
+\[
+\left.\frac{d^{n}}{ds^{n}}\left[s^{n-1}f(s)\right]\right|_{s=1}
+\]
+
+\end_inset
+
+ then this is given by 
+\begin_inset Formula 
+\begin{align*}
+\left.\frac{d^{n}}{ds^{n}}\left[s^{n-1}f(s)\right]\right|_{s=1} & =\left.\frac{d^{n}}{ds^{n}}\left[\sum_{j=0}^{n-1}\binom{n-1}{j}(s-1)^{j}\cdot\sum_{i=0}^{\infty}f_{i}(s-1)^{i}\right]\right|_{s=1}\\
+ & \left.\frac{d^{n}}{ds^{n}}\left[\left(\binom{n-1}{0}f_{n}+\binom{n-1}{1}f_{n-1}\right)\right]\right|_{s=1}\\
+ & =\frac{d^{n}}{ds^{n}}\left[\left(\binom{n-1}{0}f_{n}+\binom{n-1}{1}f_{n-1}+\cdots\right.\right.\\
+ & \qquad\left.\cdots+\binom{n-1}{n-2}f_{2}+\binom{n-1}{n-1}f_{1}\right)(s-1)^{n}+\cdots\\
+ & \qquad\left.\left.+\textrm{other}\,\textrm{terms}\right]\right|_{s=1}
+\end{align*}
+
+\end_inset
+
+Thus, we need to find the derivatives of the log xi function and take the
+ linear combination with the various binomial coefficients.
  
 \end_layout
 
@@ -160,7 +227,8 @@ Consider
 
 \end_inset
 
-We have the relation
+We have the well known relation between the zeta function and the Gamma
+ function:
 \begin_inset Formula 
 \[
 \zeta(s)\Gamma(s)=\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx.
@@ -170,9 +238,58 @@ We have the relation
 
 We can then use this in the above and have
 \begin_inset Formula 
+\begin{equation}
+\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\frac{\Gamma\left(\frac{s}{2}\right)}{\Gamma(s)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\label{eq:xi-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lastly we need the Legendre duplication formula.
+ This is given by: 
+\begin_inset Formula 
 \[
-\xi(s)=\frac{1}{2}s(s-1)\pi^{-s/2}\frac{\Gamma\left(\frac{s}{2}\right)}{\Gamma(s)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\Gamma(z)\Gamma\left(z+\tfrac{1}{2}\right)=2^{1-2z}\;\sqrt{\pi}\;\Gamma(2z)
 \]
+
+\end_inset
+
+We modify this by replacing 
+\begin_inset Formula $z$
+\end_inset
+
+ by 
+\begin_inset Formula $s/2$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{\Gamma(\frac{s}{2})}{\;\Gamma(s)}=\frac{2^{1-s}\;\sqrt{\pi}}{\Gamma\left(\tfrac{s+1}{2}\right)}
+\]
+
+\end_inset
+
+ We substitute this into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:xi-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we obtain 
+\begin_inset Formula 
+\begin{align*}
+\xi(s) & =\frac{1}{2}s(s-1)\pi^{-s/2}\frac{2^{1-s}\;\sqrt{\pi}}{\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\\
+ & =\frac{1}{2}s(s-1)\frac{2\;\sqrt{\pi}}{(\sqrt{\pi})^{s}2^{s}\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx\\
+ & =\frac{1}{2}s(s-1)\frac{(2\;\sqrt{\pi})^{1-s}}{\Gamma\left(\tfrac{s+1}{2}\right)}\int\limits _{0}^{\infty}\frac{x^{s-1}}{e^{x}-1}dx
+\end{align*}
 
 \end_inset
 
